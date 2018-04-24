@@ -7,9 +7,9 @@ class Comment {
 
 	public $commentUsername;
 
-	public function __construct($commentSaltines , $commentText, $commentUsername) {
+	public function __construct($commentSaltiness , $commentText, $commentUsername) {
 		try {
-			$this->commentSaltiness($commentSaltines);
+			$this->commentSaltiness($commentSaltiness);
 			$this->commentText($commentText);
 			$this->commentUsername($commentUsername);
 		}
@@ -22,28 +22,28 @@ class Comment {
 	/**
 	 * @return mixed
 	 */
-	public function getCommentSaltiness() :float {
+	public function getCommentSaltiness() : float {
 		return $this->commentSaltiness;
 	}
 
 	/**
 	 * @param mixed $commentSaltiness
 	 */
-	public function setCommentSaltiness($commentSaltiness) {
+	public function setCommentSaltiness($commentSaltiness) :void {
 		$this->commentSaltiness = $commentSaltiness;
 	}
 
 	/**
 	 * @return mixed
 	 */
-	public function getCommentText() :string {
+	public function getCommentText() : string {
 		return $this->commentText;
 	}
 
 	/**
 	 * @param mixed $commentText
 	 */
-	public function setCommentText($commentText) {
+	public function setCommentText($commentText) : void {
 		$this->commentText = $commentText;
 	}
 
@@ -57,12 +57,16 @@ class Comment {
 	/**
 	 * @param mixed $commentUsername
 	 */
-	public function setCommentUsername($commentUsername) {
+	public function setCommentUsername($commentUsername) :void {
 		$this->commentUsername = $commentUsername;
 	}
 
 }
 
- $superSalty = new Comment(0.8888998, 'ya dummy', '@captainRando');
+$superSalty = new Comment(0.8888998, 'ya dummy', '@captainRando');
 
-echo var_dump($superSalty);
+echo 'Saltiness' . $superSalty->getCommentSaltiness() . '</br>';
+
+echo 'Text' . $superSalty->getCommentText() . '</br>';
+
+echo 'User' . $superSalty->getCommentUsername();
