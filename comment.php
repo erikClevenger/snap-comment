@@ -7,61 +7,62 @@ class Comment {
 
 	public $commentUsername;
 
+	public function __construct($commentSaltines, $commentText, $commentUsername) {
+		try {
+			$this->commentSaltiness;
+			$this->commentText;
+			$this->commentUsername;
+		}
+		catch(\InvalidArgumentException | \RangeException | \Exception | \TypeError $exception) {
+			$exceptionType = get_class($exception);
+			throw(new $exceptionType($exception->getMessage(), 0, $exception));
+		}
+	}
+
 	/**
 	 * @return mixed
 	 */
-	public function getCommentSaltiness() {
+	public function getCommentSaltiness() :float {
 		return $this->commentSaltiness;
 	}
 
 	/**
 	 * @param mixed $commentSaltiness
 	 */
-	public function setCommentSaltiness($commentSaltiness) : float {
+	public function setCommentSaltiness($commentSaltiness) {
 		$this->commentSaltiness = $commentSaltiness;
 	}
 
 	/**
 	 * @return mixed
 	 */
-	public function getCommentText() {
+	public function getCommentText() :string {
 		return $this->commentText;
 	}
 
 	/**
 	 * @param mixed $commentText
 	 */
-	public function setCommentText($commentText) : string {
+	public function setCommentText($commentText) {
 		$this->commentText = $commentText;
 	}
 
 	/**
 	 * @return mixed
 	 */
-	public function getCommentUsername() {
+	public function getCommentUsername() : string {
 		return $this->commentUsername;
 	}
 
 	/**
 	 * @param mixed $commentUsername
 	 */
-	public function setCommentUsername($commentUsername) : string {
+	public function setCommentUsername($commentUsername) {
 		$this->commentUsername = $commentUsername;
 	}
 
-	public function __construct($args = []) {
-		try {
-			$this->commentSaltiness = ['0'];
-			$this->commentText = ['empty string!'];
-			$this->commentUsername = ['captain Random'];
-		}
-			catch(\InvalidArgumentException | \RangeException | \Exception | \TypeError $exception) {
-			$exceptionType = get_class($exception);
-			throw(new $exceptionType($exception->getMessage(), 0, $exception));
-		}
-	}
 }
 
- $superSalty = new Comment();
+ $superSalty = new Comment(0.8888998, 'ya dummy', '@captainRando');
 
-echo "var_dump($superSalty)";
+echo var_dump($superSalty);
