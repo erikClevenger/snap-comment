@@ -7,11 +7,11 @@ class Comment {
 
 	public $commentUsername;
 
-	public function __construct($commentSaltines, $commentText, $commentUsername) {
+	public function __construct($commentSaltines , $commentText, $commentUsername) {
 		try {
-			$this->commentSaltiness;
-			$this->commentText;
-			$this->commentUsername;
+			$this->commentSaltiness($commentSaltines);
+			$this->commentText($commentText);
+			$this->commentUsername($commentUsername);
 		}
 		catch(\InvalidArgumentException | \RangeException | \Exception | \TypeError $exception) {
 			$exceptionType = get_class($exception);
