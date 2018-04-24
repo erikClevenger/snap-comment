@@ -65,8 +65,8 @@ class Comment {
 
 $superSalty = new Comment(0.8888998, 'ya dummy', '@captainRando');
 
-echo 'Saltiness' . $superSalty->getCommentSaltiness() . '</br>';
+echo "Saltiness : " . $superSalty->getCommentSaltiness() . '</br>';
 
-echo 'Text' . $superSalty->getCommentText() . '</br>';
+echo "Text : " . $superSalty->getCommentText() . '</br>';
 
-echo 'User' . $superSalty->getCommentUsername();
+echo "User :" . $superSalty->getCommentUsername();
