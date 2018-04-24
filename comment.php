@@ -61,3 +61,7 @@ class Comment {
 		}
 	}
 }
+
+ $superSalty = new Comment();
+
+echo "var_dump($superSalty)";
