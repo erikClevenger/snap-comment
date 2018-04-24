@@ -8,15 +8,15 @@ class Comment {
 	public $commentUsername;
 
 	public function __construct($commentSaltiness , $commentText, $commentUsername) {
-		try {
-			$this->commentSaltiness($commentSaltiness);
-			$this->commentText($commentText);
-			$this->commentUsername($commentUsername);
-		}
-		catch(\InvalidArgumentException | \RangeException | \Exception | \TypeError $exception) {
-			$exceptionType = get_class($exception);
-			throw(new $exceptionType($exception->getMessage(), 0, $exception));
-		}
+
+			$this->commentSaltiness = ($commentSaltiness);
+			$this->commentText = ($commentText);
+			$this->commentUsername = ($commentUsername);
+
+		//catch(\InvalidArgumentException | \RangeException | \Exception | \TypeError $exception) {
+			//$exceptionType = get_class($exception);
+			//throw(new $exceptionType($exception->getMessage(), 0, $exception));
+		//}
 	}
 
 	/**
